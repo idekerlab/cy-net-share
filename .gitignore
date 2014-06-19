@@ -1,0 +1,4 @@
+.vagrant
+.DS_Store
+node-app/node_modules
+
