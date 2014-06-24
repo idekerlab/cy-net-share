@@ -8,6 +8,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var users = require('./routes/users');
+var networks = require('./routes/networks');
+var styles = require('./routes/styles');
 
 var app = express();
 
@@ -22,11 +24,16 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//////////// Routings ///////////////////
 app.get('/', function (request, response) {
     response.sendfile('public/index.html');
 });
 
-app.use('/users', users);
+
+app.use('/view', networks);
+app.use('/styles', styles);
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
