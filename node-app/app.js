@@ -7,8 +7,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var users = require('./routes/users');
 var networks = require('./routes/networks');
+var gists= require('./routes/gists');
 var styles = require('./routes/styles');
 var staticlink = require('./routes/staticlink');
 
@@ -32,6 +32,7 @@ app.get('/', function (request, response) {
 });
 
 app.use('/view', networks);
+app.use('/gists', gists);
 app.use('/styles', styles);
 app.use('/static', staticlink);
 
