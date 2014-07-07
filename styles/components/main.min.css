@@ -3,7 +3,7 @@ html {
 }
 
 a:visited {
-  color: #551a8b;
+  color: #ccd;
 }
 
 a:hover {
@@ -44,6 +44,11 @@ strong {
 
 img {
   border: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
 }
 
 pre {
@@ -2613,6 +2618,7 @@ main {
 @media all and (min-width:990px) {
   .app-bar {
     position: relative;
+    background-color: #39b1a4;
   }
 
   .app-bar.open,
@@ -2627,7 +2633,7 @@ main {
     max-width: 864px;
     padding: 0 16px;
     box-sizing: border-box;
-    background-color: #4285f4;
+    background-color: inherit;
   }
 
   .app-bar .logo {
@@ -2660,6 +2666,7 @@ main {
   }
 
   .navdrawer-container {
+    background-color: rgba(80,80,80,.8);
     width: 100%;
     height: auto;
     -webkit-transform: translate(0,0);
@@ -2696,10 +2703,37 @@ main {
 
   body {
     overflow-y: scroll;
+    background-color: #f9f9f9;
   }
 
   .navdrawer-container {
     position: relative;
     margin-top: 0;
   }
+}
+
+footer {
+  height: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+}
+
+.light-green {
+  background-color: #39b1a4;
+}
+
+.light-blue {
+  background-color: #39b1f4;
+}
+
+.centering {
+  vertical-align: center;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.padded {
+  padding: 12px;
 }
