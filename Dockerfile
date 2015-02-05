@@ -1,6 +1,5 @@
 FROM dockerfile/nodejs
 
- 
 #Installing Loopback
 RUN apt-get update
 RUN apt-get install -y ruby ruby-dev git
@@ -21,10 +20,12 @@ RUN git submodule sync
 RUN git submodule update
 WORKDIR /data/app/cy-net-share/cyjs-sample
 RUN npm install
-RUN bower install --allow-root --config.interactive=false
+RUN bower install --allow-root --config.interactive=false --force
 RUN grunt --force
+RUN cp -r dist ../node-app/public
 
 EXPOSE 3000
 
 WORKDIR /data/app/cy-net-share/node-app
-CMD forever ./bin/www
+RUN npm install
+CMD ["forever","./bin/www"]
