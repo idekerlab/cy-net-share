@@ -2,8 +2,10 @@ FROM dockerfile/nodejs
 
  
 #Installing Loopback
-RUN apt-get install -y git
-RUN npm install -g grunt-cli express forever yo bower
+RUN apt-get update
+RUN apt-get install -y ruby ruby-dev git
+RUN gem install sass compass
+RUN npm install -g grunt-cli forever yo bower
 
 # Cloe the latest cyNetShare code
 RUN mkdir /data/app
@@ -19,7 +21,7 @@ RUN git submodule sync
 RUN git submodule update
 WORKDIR /data/app/cy-net-share/cyjs-sample
 RUN npm install
-RUN bower update --allow-root
+RUN bower install --allow-root --config.interactive=false
 RUN grunt --force
 
 EXPOSE 3000
