@@ -12,6 +12,8 @@ var gists= require('./routes/gists');
 var styles = require('./routes/styles');
 var staticlink = require('./routes/staticlink');
 
+var shortener = require('./routes/shortener');
+
 var app = express();
 
 // view engine setup
@@ -35,6 +37,9 @@ app.use('/view', networks);
 app.use('/gists', gists);
 app.use('/styles', styles);
 app.use('/static', staticlink);
+
+// For Google URL shortener
+app.use('/shortener', shortener);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

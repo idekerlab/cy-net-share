@@ -3,5 +3,6 @@
 .DS_Store
 node-app/node_modules
 node-app/public
-
+node-app/api_key.txt
+api_key.txt
 
