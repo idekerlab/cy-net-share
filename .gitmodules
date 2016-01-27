@@ -1,3 +1,0 @@
-[submodule "cyjs-sample"]
-	path = cyjs-sample
-	url = git@github.com:cytoscape/cyjs-sample.git
